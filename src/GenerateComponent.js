@@ -5,9 +5,8 @@ const fs = require('fs');
 
 const addToIndex = (componentName) => {
     const currentWorkingDir = path.join(`${process.cwd()}`, common.COMPONENT_DIR)
-    // const newImport = new ShellString(`export * from './${componentName}';`);
-    // newImport.toEnd(`${currentWorkingDir}/${common.COMPONENT_INDEX}`)
-    // console.log('sheell', newImport)
+    const newImport = shell.ShellString(`export * from './${componentName}';\n`);
+    newImport.toEnd(`${currentWorkingDir}/${common.COMPONENT_INDEX}`)
 }
 const addNewComponent = (componentName) => {
     const currentWorkingDir = path.join(`${process.cwd()}/${common.COMPONENT_DIR}`, componentName)
