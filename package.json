@@ -1,0 +1,21 @@
+{
+  "name": "tuan88291",
+  "version": "1.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^4.1.1",
+    "inquirer": "^7.0.5",
+    "shelljs": "^0.8.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "shx rm -rf dist",
+    "copy:templates": "shx cp -R src/templates dist/templates",
+    "build": "yarn clean && yarn copy:templates && tsc",
+    "start": "tsc -w"
+  },
+  "bin": {
+    "customcli": "./index.js"
+  }
+}
